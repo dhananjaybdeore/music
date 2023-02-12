@@ -1,3 +1,4 @@
+//This is Javascript File
 const music = new Audio("1.mp3");
 let song_side = document.getElementsByClassName("song_side")[0];
 let content_heading = document.getElementsByClassName("content_heading")[0];
