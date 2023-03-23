@@ -22,6 +22,22 @@ html {
     font-size: 75%;
   }
 }
+.bi-file-music-fill {
+  /* display:none; */
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 100;
+  color: white;
+  font-size: 4rem;
+  display: none;
+}
+.show {
+  transition: 0.4s ease all;
+  z-index: 70;
+  width: 100vw;
+  transform: translateX(0) !important;
+}
 body {
   width: 100%;
   height: 100vh;
@@ -33,15 +49,16 @@ body {
 }
 
 header {
-  width: 85%;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   /* border: 2px solid rgb(75, 74, 74); */
-  border-radius: 3rem;
+  /* border-radius: 3rem; */
   display: flex;
   flex-wrap: wrap;
-  overflow: hidden;
+  background-color: #0b1320;
+  /* overflow: hidden; */
 }
-header .menu_side,
+.menu_side,
 .song_side {
   position: relative;
   width: 25%;
@@ -49,13 +66,15 @@ header .menu_side,
   /* border: 2px solid white; */
   background-color: #111727;
   box-shadow: 5px 0px 2px #090f1f;
+  transition: 0.4s ease all;
+
   color: white;
 }
 header .song_side {
   width: 75%;
   background-color: #0b1320;
 }
-header .master_play {
+header .wa_play {
   width: 100%;
   height: 10%;
   background-color: #111727;
@@ -164,10 +183,59 @@ header .menu_side .menu_song li .bi {
   font-size: 1.6rem;
   padding: 1rem 1rem 0 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .bi-file-music-fill {
+    display: block;
+  }
+  .menu_side {
+    transition: 0.4s ease all;
+
+    transform: translateX(-200%);
+  }
+  header .menu_side h1 {
+    font-size: 3rem;
+    margin: 2rem 0 0 10rem;
+    font-weight: 500;
+  }
+  header .menu_side .menu_song {
+    width: 100%;
+    height: 40rem;
+    border: 0.1px solid gray;
+    margin-top: 4rem;
+    padding: 3rem;
+    overflow: scroll;
+    border-radius: 2rem;
+  }
+}
+
 header .master_play {
+  width: 100%;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  position: fixed;
+  bottom: 0;
+  padding: 0rem 2rem 2rem 2rem;
+  justify-content: space-evenly;
+  /* background:white; */
+  backdrop-filter: blur(10px);
+
+  z-index: 100;
+}
+header .master_play .master_play_subdiv {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+}
+header .master_play .master_play_subdiv1 {
+  display: flex;
+  flex: 3;
+  align-items: center;
+  width: 100%;
+  justify-content: space-evenly;
 }
 header .master_play .wave {
   height: 3rem;
@@ -239,13 +307,18 @@ header .master_play h5 .subTitle {
 header .master_play .icon {
   color: white;
   font-size: 3rem;
-  margin: 0 2rem 0 4rem;
+  /* margin: 0 2rem 0 4rem; */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  /* min-width: 150px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
 }
 header .master_play .icon .bi {
   cursor: pointer;
@@ -388,7 +461,20 @@ header .master_play .vol input {
   transition: 3s linear;
   opacity: 0;
 }
-
+@media screen and (max-width: 768px) {
+  .master_play {
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .master_play_subdiv {
+    justify-content: space-between;
+  }
+  .master_play_subdiv1 {
+    margin-top: 1rem;
+    justify-content: space-between;
+  }
+}
 header .song_side {
   z-index: 2;
   /* background-image: url("bg.png"); */
@@ -447,10 +533,12 @@ header .song_side nav ul li span {
   border-radius: 2rem;
   left: 0;
 }
+
 header .song_side nav .search {
+  display: flex;
   position: relative;
   width: 40%;
-  padding: 1px 10px;
+  /* padding: 1px 10px; */
   border-radius: 2rem;
   color: gray;
 }
@@ -485,6 +573,7 @@ header .song_side nav .user img {
   position: absolute;
   height: 3.5rem;
   width: 3.5rem;
+  border-radius: 50%;
   box-shadow: 2px 2px 8px #131312;
 }
 header .song_side .content {
@@ -653,4 +742,11 @@ header .song_side .popular_artists .item li img {
   height: 100%;
   border-radius: 50%;
   position: absolute;
+}
+
+@media screen and (max-width: 1000px) {
+  header .song_side {
+    width: 100vw;
+    margin-top: -90vh;
+  }
 }

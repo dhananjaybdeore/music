@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" href="favicon.ico" />
   </head>
   <body>
+    <i class="bi bi-file-music-fill toggle-button"></i>
     <header>
       <div class="menu_side" id="menu_side">
         <h1>Playlist</h1>
@@ -88,19 +89,14 @@
         <nav>
           <ul>
             <li>Discover <span></span></li>
-            <li>MY LIBRARY</li>
-            <li>RADIO</li>
+            <li>LIBRARY</li>
           </ul>
           <div class="search">
             <i class="bi bi-search"></i>
             <input type="text" placeholder="Search Music..." />
           </div>
           <div class="user">
-            <img
-              src="img/KDS CODER.png"
-              alt="User"
-              title="KDS CODER (Jahid Khan)"
-            />
+            <img src="img/akhil.jpg" alt="User" title="User" />
           </div>
         </nav>
         <div class="content">
@@ -299,33 +295,37 @@
         </div>
       </div>
       <div class="master_play">
-        <div class="wave">
-          <div class="wave1"></div>
-          <div class="wave1"></div>
-          <div class="wave1"></div>
+        <div class="master_play_subdiv">
+          <div class="wave">
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+            <div class="wave1"></div>
+          </div>
+          <img src="img/1.jpg" alt="Alan" id="poster_master_play" />
+          <h5 id="title">
+            On My Way
+            <div class="subTitle">Alan Walker</div>
+          </h5>
+          <div class="icon">
+            <i class="bi bi-skip-start-fill" id="back"></i>
+            <i class="bi bi-play-fill" id="masterPlay"></i>
+            <i class="bi bi-skip-end-fill" id="next"></i>
+          </div>
         </div>
-        <img src="img/1.jpg" alt="Alan" id="poster_master_play" />
-        <h5 id="title">
-          On My Way
-          <div class="subTitle">Alan Walker</div>
-        </h5>
-        <div class="icon">
-          <i class="bi bi-skip-start-fill" id="back"></i>
-          <i class="bi bi-play-fill" id="masterPlay"></i>
-          <i class="bi bi-skip-end-fill" id="next"></i>
-        </div>
-        <span id="currentStart">0:00</span>
-        <div class="bar">
-          <input type="range" id="seek" min="0" max="100" value="0" />
-          <div class="bar2" id="bar2"></div>
-          <div class="dot"></div>
-        </div>
-        <span id="currentEnd">0:00</span>
-        <div class="vol">
-          <i class="bi bi-volume-down-fill" id="vol_icon"></i>
-          <input type="range" id="vol" min="0" value="30" max="100" />
-          <div class="vol_bar"></div>
-          <div class="dot" id="vol_dot"></div>
+        <div class="master_play_subdiv1">
+          <span id="currentStart">0:00</span>
+          <div class="bar">
+            <input type="range" id="seek" min="0" max="100" value="0" />
+            <div class="bar2" id="bar2"></div>
+            <div class="dot"></div>
+          </div>
+          <span id="currentEnd">0:00</span>
+          <div class="vol">
+            <i class="bi bi-volume-down-fill" id="vol_icon"></i>
+            <input type="range" id="vol" min="0" value="30" max="100" />
+            <div class="vol_bar"></div>
+            <div class="dot" id="vol_dot"></div>
+          </div>
         </div>
       </div>
     </header>

@@ -356,4 +356,10 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-//code to change the song_side background according to the song
+//Toggle Playlist
+let menuSide = document.getElementsByClassName("menu_side")[0];
+let toggleButton = document.getElementsByClassName("toggle-button")[0];
+toggleButton.addEventListener("click", () => {
+  menuSide.classList.toggle("show");
+  menuSide.style.width = "100%";
+});
